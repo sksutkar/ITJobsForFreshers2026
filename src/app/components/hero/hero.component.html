@@ -1,0 +1,30 @@
+<section class="hero-section">
+  <div class="hero-orb hero-orb-one"></div><div class="hero-orb hero-orb-two"></div>
+  <div class="container hero-layout">
+    <div class="hero-content">
+      <span class="eyebrow"><span class="eyebrow-dot"></span> Your next chapter starts here</span>
+      <h1>Find Your Next <span>IT Job</span><br>or Internship</h1>
+      <p class="hero-description">Latest IT jobs for freshers, off-campus drives, internships and interview questions — all in one place.</p>
+      <form class="search-panel" (ngSubmit)="search()" role="search">
+        <label class="search-field"><i class="bi bi-search" aria-hidden="true"></i><span class="visually-hidden">Job title or skill</span><input name="query" [(ngModel)]="query" placeholder="Job title, skill or company"></label>
+        <span class="search-divider"></span>
+        <label class="search-field location-field"><i class="bi bi-geo-alt" aria-hidden="true"></i><span class="visually-hidden">Location</span><input name="location" [(ngModel)]="location" placeholder="City or location"></label>
+        <button class="btn btn-gradient search-submit" type="submit"><i class="bi bi-search" aria-hidden="true"></i> Search jobs</button>
+      </form>
+      <div class="popular-searches"><span>Popular:</span><button *ngFor="let term of popularSearches" type="button" (click)="search(term)">{{ term }}</button></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-window"><div class="window-top"><span></span><span></span><span></span><b>your-next-job.dev</b></div>
+        <div class="code-line"><i>01</i><span class="code-purple">const</span> dreamJob = <span class="code-green">'yours'</span>;</div>
+        <div class="code-line"><i>02</i><span class="code-purple">while</span> (keepGrowing) {{ '{' }}</div>
+        <div class="code-line indent"><i>03</i>buildYourFuture();</div>
+        <div class="code-line"><i>04</i>{{ '}' }}</div>
+        <div class="code-cursor"></div>
+      </div>
+      <div class="floating-card float-card-top"><span class="float-icon"><i class="bi bi-briefcase-fill"></i></span><span><b>New opportunities</b><small>Made for your next move</small></span></div>
+      <div class="floating-card float-card-bottom"><span class="float-check"><i class="bi bi-check-lg"></i></span><span><b>Career-ready</b><small>Learn. Apply. Grow.</small></span></div>
+      <div class="art-sparkle sparkle-one">✦</div><div class="art-sparkle sparkle-two">✳</div>
+    </div>
+  </div>
+  <div class="container hero-footnote"><i class="bi bi-info-circle" aria-hidden="true"></i> Listings on this demo are illustrative samples, not verified or live vacancies.</div>
+</section>

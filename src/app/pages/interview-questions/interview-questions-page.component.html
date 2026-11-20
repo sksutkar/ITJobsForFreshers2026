@@ -1,0 +1,9 @@
+<section class="page-banner"><div class="container"><span class="section-kicker">Learn & prepare</span><h1>Interview Questions</h1><p>Practice common questions across popular IT skills.</p></div></section>
+<section class="section-block prep-page">
+  <div class="container prep-layout">
+    <aside class="category-sidebar"><h2>Categories</h2><button *ngFor="let category of categories" type="button" [class.selected]="category.name === selectedCategory" (click)="selectedCategory = category.name">{{ category.name }}<i class="bi bi-chevron-right"></i></button></aside>
+    <div class="question-list"><div class="results-line"><div><span class="section-kicker">Practice set</span><h2>{{ selectedCategory }} Interview Questions</h2></div><span class="sample-label">Sample questions</span></div>
+      <details class="question-item" *ngFor="let question of questions; let i = index"><summary><span class="question-number">{{ (i + 1).toString().padStart(2, '0') }}</span>{{ question }}<i class="bi bi-plus-lg"></i></summary><p>Think through the key concepts, explain your reasoning clearly, and support your answer with a practical example where possible.</p></details>
+    </div>
+  </div>
+</section>

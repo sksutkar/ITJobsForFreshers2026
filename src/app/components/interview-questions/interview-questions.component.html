@@ -1,0 +1,14 @@
+<section class="section-block questions-section" id="interview-questions">
+  <div class="container">
+    <div class="section-heading centered-heading">
+      <div><span class="section-kicker">Prepare with confidence</span><h2>Make your next interview count</h2><p>Explore practical question sets for the technologies employers use.</p></div>
+    </div>
+    <div class="question-grid">
+      <article class="question-card" *ngFor="let category of categories">
+        <span class="question-icon"><i class="bi" [ngClass]="category.icon" aria-hidden="true"></i></span>
+        <h3>{{ category.name }} Interview Questions</h3><p>{{ category.count }} to sharpen your skills</p>
+        <a [routerLink]="['/interview-questions']" [queryParams]="{ category: category.name }">View questions <i class="bi bi-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>

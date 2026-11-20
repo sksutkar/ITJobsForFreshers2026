@@ -1,0 +1,32 @@
+<section class="page-banner"><div class="container"><a class="back-link" routerLink="/jobs"><i class="bi bi-arrow-left"></i> Back to jobs</a><h1>Job details</h1></div></section>
+<section class="section-block detail-section">
+  <div class="container" *ngIf="loading; else jobResult">
+    <div class="job-loading" role="status" aria-live="polite">
+      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+      <span>Loading job details…</span>
+    </div>
+  </div>
+  <ng-template #jobResult>
+    <div class="container" *ngIf="job as currentJob; else missingJob">
+      <article class="detail-card">
+        <div class="detail-heading"><span class="company-logo tone-2">{{ currentJob.company.slice(0, 2).toUpperCase() }}</span><div><span class="company-name">{{ currentJob.company }}</span><h2>{{ currentJob.title }}</h2></div></div>
+        <div class="detail-meta"><span><i class="bi bi-geo-alt"></i> {{ currentJob.location }}</span><span><i class="bi bi-briefcase"></i> {{ currentJob.experience }}</span><span><i class="bi bi-clock"></i> {{ currentJob.postedDate }}</span></div>
+        <div class="sample-notice"><i class="bi bi-info-circle"></i> This is an illustrative sample, not a verified or live vacancy. Visit the employer’s careers page to check current opportunities.</div>
+        <h3>About this sample role</h3><p>{{ currentJob.description }}</p>
+        <div *ngIf="currentJob.qualification"><h3>Qualification</h3><p>{{ currentJob.qualification }}</p></div>
+        <div *ngIf="currentJob.eligibility"><h3>Eligibility</h3><p>{{ currentJob.eligibility }}</p></div>
+        <div *ngIf="currentJob.deadline"><h3>Application deadline</h3><p>{{ currentJob.deadline }}</p></div>
+        <div *ngIf="currentJob.duration"><h3>Duration</h3><p>{{ currentJob.duration }}</p></div>
+        <h3>Skills to explore</h3><div class="job-tags"><span *ngFor="let skill of currentJob.skills">{{ skill }}</span></div>
+        <a class="btn btn-gradient detail-apply" [href]="currentJob.applicationUrl" target="_blank" rel="noopener noreferrer">Visit {{ currentJob.company }} careers <i class="bi bi-arrow-up-right"></i></a>
+      </article>
+    </div>
+    <ng-template #missingJob>
+      <div class="container empty-state">
+        <h2>Job not found</h2>
+        <p>This sample listing may no longer be available or the job ID is invalid.</p>
+        <a class="btn btn-gradient" routerLink="/jobs">Browse all jobs</a>
+      </div>
+    </ng-template>
+  </ng-template>
+</section>

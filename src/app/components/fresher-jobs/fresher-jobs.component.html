@@ -1,0 +1,9 @@
+<section class="section-block fresher-section" id="fresher-jobs">
+  <div class="container">
+    <div class="section-heading">
+      <div><span class="section-kicker">Start strong</span><h2>Made for your first big break</h2><p>Explore entry-level roles and sample graduate opportunities.</p></div>
+      <a class="text-link desktop-link" routerLink="/fresher-jobs">Explore fresher jobs <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="job-grid fresher-grid"><app-job-card *ngFor="let job of jobs" [job]="job"></app-job-card></div>
+  </div>
+</section>

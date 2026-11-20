@@ -1,0 +1,19 @@
+<article class="job-card">
+  <div class="job-card-top">
+    <span class="company-logo" [ngClass]="'tone-' + brandTone" aria-hidden="true">{{ companyInitials }}</span>
+    <span class="posted-label"><i class="bi bi-clock" aria-hidden="true"></i> {{ job.postedDate }}</span>
+  </div>
+  <span class="company-name">{{ job.company }}</span>
+  <h3><a [routerLink]="['/jobs', job.id]">{{ job.title }}</a></h3>
+  <div class="job-meta">
+    <span><i class="bi bi-geo-alt" aria-hidden="true"></i>{{ job.location }}</span>
+    <span><i class="bi bi-briefcase" aria-hidden="true"></i>{{ job.experience }}</span>
+  </div>
+  <p *ngIf="job.duration" class="job-extra"><i class="bi bi-calendar3"></i> Duration: {{ job.duration }}</p>
+  <p *ngIf="job.eligibility" class="job-extra"><i class="bi bi-mortarboard"></i> {{ job.eligibility }}</p>
+  <div class="job-tags"><span *ngFor="let skill of job.skills.slice(0, 3)">{{ skill }}</span></div>
+  <div class="job-card-actions">
+    <a class="btn btn-outline-purple" [routerLink]="['/jobs', job.id]">View details</a>
+    <a class="apply-link" [href]="job.applicationUrl" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Visit ' + job.company + ' careers page'">Apply <i class="bi bi-arrow-up-right"></i></a>
+  </div>
+</article>

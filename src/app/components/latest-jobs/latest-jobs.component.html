@@ -1,0 +1,10 @@
+<section class="section-block jobs-section" id="latest-jobs">
+  <div class="container">
+    <div class="section-heading">
+      <div><span class="section-kicker">Fresh opportunities</span><h2>Latest IT Jobs</h2><p>Explore sample roles from companies hiring across India.</p></div>
+      <a class="text-link desktop-link" routerLink="/jobs">View all jobs <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="job-grid"><app-job-card *ngFor="let job of jobs" [job]="job"></app-job-card></div>
+    <a class="btn btn-outline-purple mobile-view-all" routerLink="/jobs">View all latest jobs <i class="bi bi-arrow-right"></i></a>
+  </div>
+</section>
